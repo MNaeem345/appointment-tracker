@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Appointment</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>Search Appointment</h1>
+<div class="nav-container">
+    <a href="/add">Add Appointment</a>
+    <a href="/appointments">View Appointments</a>
+    <a href="/search">Search Appointment</a>
+</div>
+
+<form method="POST">
+    <label>Enter client name:</label>
+    <input type="text" name="client_name" required>
+    <button type="submit">Search</button>
+</form>
+
+{% for appointment in results %}
+<p>
+    ID: {{ appointment[0] }} <br>
+    Client Name: {{ appointment[1] }} <br>
+    Date: {{ appointment[2] }} <br>
+    Time: {{ appointment[3] }} <br>
+    Reason: {{ appointment[4] }}
+</p>
+{% endfor %}
+
+<div class="back-container">
+    <a href="/">Back Home</a>
+</div>
+
+</body>
+</html>

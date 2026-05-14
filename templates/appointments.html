@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Appointments</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>All Appointments</h1>
+<div class="nav-container">
+    <a href="/add">Add Appointment</a>
+    <a href="/appointments">View Appointments</a>
+    <a href="/search">Search Appointment</a>
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Client Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Reason</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment[0] }}</td>
+        <td>{{ appointment[1] }}</td>
+        <td>{{ appointment[2] }}</td>
+        <td>{{ appointment[3] }}</td>
+        <td>{{ appointment[4] }}</td>
+        <td>
+            <a href="/edit/{{ appointment[0] }}">Edit</a>
+            <a href="/delete/{{ appointment[0] }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="back-container">
+    <a href="/">Back Home</a>
+</div>
+
+</body>
+</html>

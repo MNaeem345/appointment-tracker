@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Appointment</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Edit Appointment</h1>
+
+
+<form method="POST">
+    <label>Client Name:</label>
+    <input type="text" name="client_name" value="{{ appointment[1] }}" required>
+
+    <label>Appointment Date:</label>
+    <input type="date" name="appointment_date" value="{{ appointment[2] }}" required>
+
+    <label>Appointment Time:</label>
+    <input type="time" name="appointment_time" value="{{ appointment[3] }}" required>
+
+    <label>Reason:</label>
+    <input type="text" name="reason" value="{{ appointment[4] }}" required>
+
+    <button type="submit">Update Appointment</button>
+</form>
+
+<div class="back-container">
+    <a href="/">Back Home</a>
+</div>
+
+</body>
+</html>
